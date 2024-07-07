@@ -122,3 +122,15 @@ footer path {
 footer:hover path {
     fill: #575757;
 }
+
+@media (max-width: 380px) {
+    .logo img {
+        width: 100px;
+    }
+
+    .login-content {
+        gap: 10px;
+        width: 250px;
+        padding: 30px;
+    }
+}
