@@ -1,0 +1,136 @@
+/* dm-sans-latin-wght-normal */
+@font-face {
+    font-family: 'DM Sans Variable';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 100 1000;
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/dm-sans:vf@latest/latin-wght-normal.woff2) format('woff2-variations');
+    unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+:root {
+    --main-color: #272727;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: "DM Sans Variable";
+}
+
+h1, h2, h3, h4, p {
+    margin: 0px;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+/* MAIN */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--main-color);
+}
+
+.logo img {
+    width: 180px;
+}
+
+.login-content {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 0px #000;
+}
+
+.login-inputs {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    width: 100%;
+
+    label {
+        font-weight: bold;
+    }
+
+    input {
+        background-color: var(--main-color);
+        border: 0px;
+        border-radius: 5px;
+        box-shadow: 3px 3px 0px #a7a6a7;
+        color: #fff;
+        padding: 5px 7px;
+        transition: box-shadow 0.5s;
+    }
+
+    input:focus {
+        outline: none;
+        box-shadow: 3px 3px 0px #000;
+    }
+}
+
+.login-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    background-color: var(--main-color);
+    color: #fff;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 5px 0px;
+    width: 100%;
+    border: 0px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 0px #a7a6a7;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.login-btn:hover {
+    box-shadow: 3px 3px 0px #000;
+}
+
+.login-btn:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px 0px #000;
+}
+
+/* FOOTER */
+footer {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+}
+
+footer path {
+    transition: fill 0.3s;
+}
+
+footer:hover path {
+    fill: #575757;
+}
+
+@media (max-width: 380px) {
+    .logo img {
+        width: 100px;
+    }
+
+    .login-content {
+        gap: 10px;
+        width: 250px;
+        padding: 30px;
+    }
+}
