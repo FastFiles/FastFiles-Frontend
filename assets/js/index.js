@@ -1,4 +1,4 @@
-const urlIp = "http://fast-files.somee.com/api/folders";
+const urlIp = "https://fast-files.somee.com/api/folders";
 const token = localStorage.getItem("authToken");
 
 // GREETINGS

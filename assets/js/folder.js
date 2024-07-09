@@ -1,5 +1,5 @@
-const urlIpFiles = "http://fast-files.somee.com/api/files";
-const urlIpFolders = "http://fast-files.somee.com/api/folders";
+const urlIpFiles = "https://fast-files.somee.com/api/files";
+const urlIpFolders = "https://fast-files.somee.com/api/folders";
 const folderId = localStorage.getItem("folderID");
 const token = localStorage.getItem("authToken");
 

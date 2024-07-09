@@ -1,6 +1,6 @@
 console.log("Working :)");
  //Obtenemos el valor del id del input correo
-const Url = 'http://fast-files.somee.com/api/Auth';  //Fetch
+const Url = 'https://fast-files.somee.com/api/Auth';  //Fetch
 //Obtenemos el formulario.
 
 //HAcemos una función para validar los datos:
