@@ -19,7 +19,7 @@ document.getElementById("login").addEventListener('submit',async function(event)
         {
             alert("Por favor llene todos los campos.");
         }
-     
+    
     //Añadimos nu try-cath para la respuesta de la cosnsulta
     try
     {
@@ -31,27 +31,27 @@ document.getElementById("login").addEventListener('submit',async function(event)
                 },
                 body:JSON.stringify(credentials)
             });
+
             if(!response.ok)
                 {
                     alert("Ocurrio un error en el correo o contraseña");
+                } else {
+                    
                 }
 
             const data = await response.json();
-            console.log(data);
-            if(data == data) //Validamos si el token es igual al token
+
+            if (data == data) //Validamos si el token es igual al token
                 {
                     alert("Has iniciado con exito");
-                    localStorage.setItem('authToken', data); //Guardamos el token en el local storage
+                    localStorage.setItem('authToken', data.token); //Guardamos el token en el local storage
                     window.location.href="../index.html";
                 }
-                else 
-                {
+                else {
                     alert("El token no se encontro")
-                    console.log("Ocurrio un error en el correo o contraseña",data);
+                    console.log("Ocurrio un error en el correo o contraseña", data);
                 }
-    }catch(error)
-    {
-        return F;
+    }catch(error) {
+        return `F: ${error.Message}`;
     }
-    
 })

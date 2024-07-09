@@ -1,4 +1,5 @@
-const urlIp = "http://192.168.1.7:5182/api/folders";
+const urlIp = "http://localhost:5182/api/folders";
+const token = localStorage.getItem("authToken");
 
 // GREETINGS
 const date = new Date();
@@ -16,7 +17,20 @@ if (dateTime >= 0 && dateTime < 12) {
 
 greetings.textContent = `${dateName}, Juanky`;
 
-fetch(urlIp).then(r => r.json()).then((d) => {
+// LOGOUT
+const logout = document.querySelector(".logout");
+logout.addEventListener("click", () => {
+    localStorage.clear();
+})
+
+fetch(urlIp,
+    {
+        headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+        }
+    }
+).then(r => r.json()).then((d) => {
     d.forEach((folder) => {
         const foldersDiv = document.querySelector(".folder-content");
     
