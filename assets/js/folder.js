@@ -1,5 +1,5 @@
-const urlIpFiles = "http://localhost:5182/api/files";
-const urlIpFolders = "http://localhost:5182/api/folders";
+const urlIpFiles = "http://fast-files.somee.com/api/files";
+const urlIpFolders = "http://fast-files.somee.com/api/folders";
 const folderId = localStorage.getItem("folderID");
 const token = localStorage.getItem("authToken");
 
@@ -10,14 +10,7 @@ logout.addEventListener("click", () => {
 })
 
 // ROUTE
-fetch(urlIpFolders,
-    {
-        headers: {
-            'Authorization': `Bearer ${token}`,
-            'Content-Type': 'application/json'
-        }
-    }
-).then(r => r.json()).then((d) => {
+fetch(urlIpFolders).then(r => r.json()).then((d) => {
     d.forEach(folder => {
         if (folder.id == folderId) {
             const currentRoute = document.querySelector("#current-location");
@@ -27,14 +20,7 @@ fetch(urlIpFolders,
 })
 
 // FILES
-fetch(urlIpFiles,
-    {
-        headers: {
-            'Authorization': `Bearer ${token}`,
-            'Content-Type': 'application/json'
-        }
-    }
-).then(r => r.json()).then((files) => {
+fetch(urlIpFiles).then(r => r.json()).then((files) => {
     files.forEach(file => {
         if (file.folderId == folderId) {
             console.log(file);

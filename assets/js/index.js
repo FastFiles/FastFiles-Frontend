@@ -1,4 +1,4 @@
-const urlIp = "http://localhost:5182/api/folders";
+const urlIp = "http://fast-files.somee.com/api/folders";
 const token = localStorage.getItem("authToken");
 
 // GREETINGS
@@ -23,14 +23,7 @@ logout.addEventListener("click", () => {
     localStorage.clear();
 })
 
-fetch(urlIp,
-    {
-        headers: {
-            'Authorization': `Bearer ${token}`,
-            'Content-Type': 'application/json'
-        }
-    }
-).then(r => r.json()).then((d) => {
+fetch(urlIp).then(r => r.json()).then((d) => {
     d.forEach((folder) => {
         const foldersDiv = document.querySelector(".folder-content");
     
@@ -58,6 +51,4 @@ fetch(urlIp,
             location.href = "../../folder/index.html";
         })
     })
-
-    console.log(d);
 })
