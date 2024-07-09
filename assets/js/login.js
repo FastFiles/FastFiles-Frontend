@@ -1,28 +1,26 @@
 console.log("Working :)");
-const email = document.getElementById("correo").value; //Obtenemos el valor del id del input correo
-const password = document.getElementById("clave").value; //Obtenemos el id de clave 
-const btonSend = document.getElementById("send").value; //obtenemos el valor del id 
-const Url = 'http://localhost:5182/api/Auth';  //Funcion Login
+ //Obtenemos el valor del id del input correo
+const Url = 'http://localhost:5182/api/Auth';  //Fetch
 //Obtenemos el formulario.
-const form = document.querySelector("login-content");
+
 
 //HAcemos una función para validar los datos:
-
-form.addEventListener('submit',async function(event){
+document.getElementById("login").addEventListener('submit',async function(event){
     event.preventDefault(); //Esto em ayuda e enviar el formulario de una manera distinta => segun lo que entendi no recarga la pagina si no que deja entrar asi como asi
+   
+    const email = document.getElementById("correo").value; //Obtenemos el valor del id del input correo
+    const password = document.getElementById("clave").value; //Obtenemos el id de clave 
 
-    if(email == null || password == null)
-        {
-            alert("Por favor llene todos los campos.");
-            return;
-        }
-
-    
-    const creadentials = {
+    const credentials = {
         Email: email,
         Password: password
     };
-    //Añadimos un try-cath para la respuesta de la cosnsulta
+    if(email == null || password == null)
+        {
+            alert("Por favor llene todos los campos.");
+        }
+     
+    //Añadimos nu try-cath para la respuesta de la cosnsulta
     try
     {
         const response = await fetch(Url,
@@ -31,18 +29,29 @@ form.addEventListener('submit',async function(event){
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body:JSON.stringify(creadentials)
+                body:JSON.stringify(credentials)
             });
-            if(response != ok)
+            if(!response.ok)
                 {
-                    return NotFound("Ocurrio un error en el correo o contraseña");
+                    alert("Ocurrio un error en el correo o contraseña");
                 }
+
             const data = await response.json();
-            console.log('Token:', data.Token);
-            localStorage.setItem('authToken', data.Token); //Guardamos el token en el local storage
-            alert("Has iniciado con exito");
+            console.log(data);
+            if(data == data) //Validamos si el token es igual al token
+                {
+                    alert("Has iniciado con exito");
+                    localStorage.setItem('authToken', data); //Guardamos el token en el local storage
+                    window.location.href="../index.html";
+                }
+                else 
+                {
+                    alert("El token no se encontro")
+                    console.log("Ocurrio un error en el correo o contraseña",data);
+                }
     }catch(error)
     {
-        console.log('error:', error);
+        return F;
     }
+    
 })
