@@ -1,12 +1,13 @@
 console.log("Working :)");
  //Obtenemos el valor del id del input correo
-const Url = 'https://fast-files.somee.com/api/Auth';  //Fetch
+const Url = 'http://localhost:5182/api/Auth';  //Fetch
 //Obtenemos el formulario.
+
 
 //HAcemos una función para validar los datos:
 document.getElementById("login").addEventListener('submit',async function(event){
     event.preventDefault(); //Esto em ayuda e enviar el formulario de una manera distinta => segun lo que entendi no recarga la pagina si no que deja entrar asi como asi
-    
+   
     const email = document.getElementById("correo").value; //Obtenemos el valor del id del input correo
     const password = document.getElementById("clave").value; //Obtenemos el id de clave 
 
