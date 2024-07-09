@@ -40,10 +40,18 @@ header {
     background-color: #fff;
     filter: blur(1.5);
     padding: 10px;
+    height: 54px;
     border-radius: 0px 0px 15px 15px;
 }
 
 .left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #000;
+}
+
+.left-logo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,6 +63,15 @@ header {
 
     .left-img-text {
         width: 80px;
+    }
+}
+
+.left-route {
+    display: flex;
+    gap: 10px;
+
+    #current-location {
+        font-weight: bold;
     }
 }
 
@@ -132,7 +149,6 @@ main {
 .folder-item:hover .folder-icon svg {
     transform: rotate(10deg);
 }
-
 
 .folder-icon {
     line-height: 0px;

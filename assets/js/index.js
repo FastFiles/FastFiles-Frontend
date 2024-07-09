@@ -37,6 +37,12 @@ fetch(urlIp).then(r => r.json()).then((d) => {
         folderName.appendChild(folderNameP);
 
         folderItem.appendChild(folderName);
+
+        folderItem.addEventListener("click", () => {
+            localStorage.setItem("folderID", folder.id);
+
+            location.href = "../../folder/index.html";
+        })
     })
 
     console.log(d);
