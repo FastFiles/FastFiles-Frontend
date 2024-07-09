@@ -8,7 +8,51 @@
     <title>FastFiles</title>
 </head>
 <body>
-    <a href="login/index.html" id="cerrar">Cerrar sesion.</a>
+    <header>
+        <a href="./index.html" class="left">
+            <img class="left-img-logo" src="./assets/img/IsotipoBlack.png" alt="Isotipo">
+            <img class="left-img-text" src="./assets/img/LogoText.png" alt="Istotipo text">
+        </a>
+
+        <div class="right">
+            <a href="login/index.html" class="logout">
+                <p>Cerrar Sesión</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#ffffff" fill-rule="evenodd" d="M11 2a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3zm1.293 6.293a1 1 0 0 1 1.414 0l3 3a1 1 0 0 1 0 1.414l-3 3a1 1 0 0 1-1.414-1.414L13.586 13H5a1 1 0 1 1 0-2h8.586l-1.293-1.293a1 1 0 0 1 0-1.414" clip-rule="evenodd"/></svg>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <div class="greetings">
+            <h2 id="greetingsName"></h2>
+        </div>
+
+        <div class="folders">
+            <p class="folder-text">Mis Carpetas</p>
+
+            <div class="folder-content">
+                <div class="folder-item folder-create">
+                    <div class="folder-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#ffffff" d="M13 19c0 .34.04.67.09 1H4a2 2 0 0 1-2-2V6c0-1.11.89-2 2-2h6l2 2h8a2 2 0 0 1 2 2v5.81c-.88-.51-1.9-.81-3-.81c-3.31 0-6 2.69-6 6m7-1v-3h-2v3h-3v2h3v3h2v-3h3v-2z"/></svg>
+                    </div>
+
+                    <div class="folder-name">
+                        <p>Crear nueva carpeta</p>
+                    </div>
+                </div>
+
+                <div class="folder-item">
+                    <div class="folder-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#ffffff" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6a2 2 0 0 1 2-2h3.93a2 2 0 0 1 1.664.89l.812 1.22A2 2 0 0 0 13.07 7H19a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                    </div>
+
+                    <div class="folder-name">
+                        <p>Screenshots</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
     <script src="assets/js/index.js"></script>
 </body>
 </html>
