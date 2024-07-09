@@ -1,4 +1,5 @@
-const urlIp = "http://192.168.1.7:5182/api/folders";
+const urlIp = "http://localhost:5182/api/folders";
+const token = localStorage.getItem("authToken");
 
 // GREETINGS
 const date = new Date();
@@ -15,6 +16,12 @@ if (dateTime >= 0 && dateTime < 12) {
 }
 
 greetings.textContent = `${dateName}, Juanky`;
+
+// LOGOUT
+const logout = document.querySelector(".logout");
+logout.addEventListener("click", () => {
+    localStorage.clear();
+})
 
 fetch(urlIp).then(r => r.json()).then((d) => {
     d.forEach((folder) => {
@@ -37,6 +44,12 @@ fetch(urlIp).then(r => r.json()).then((d) => {
         folderName.appendChild(folderNameP);
 
         folderItem.appendChild(folderName);
+
+        folderItem.addEventListener("click", () => {
+            localStorage.setItem("folderID", folder.id);
+
+            location.href = "../../folder/index.html";
+        })
     })
 
     console.log(d);

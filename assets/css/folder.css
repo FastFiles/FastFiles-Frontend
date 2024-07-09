@@ -1,0 +1,34 @@
+.files {
+    width: 80%;
+}
+
+.files-text {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #aaaaaa;
+}
+
+.files-content {
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #555555;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    p {
+        line-height: 0px
+    }
+}
+
+.file-create {
+    background-color: #000;
+}

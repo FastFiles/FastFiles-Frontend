@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon.svg" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/css/folder.css">
+    <title>Folder - FastFiles</title>
+</head>
+<body>
+    <header>
+        <div class="left">
+            <a href="./index.html" class="left-logo">
+                <img class="left-img-logo" src="../assets/img/IsotipoBlack.png" alt="Isotipo">
+                <img class="left-img-text" src="../assets/img/LogoText.png" alt="Istotipo text">
+            </a>
+
+            <div class="left-route">
+                <a class="main-page" href="../index.html">Página principal</a>
+                <p>></p>
+                <p id="current-location"></p>
+            </div>
+        </div>
+
+
+        <div class="right">
+            <a href="../login/index.html" class="logout">
+                <p>Cerrar Sesión</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#ffffff" fill-rule="evenodd" d="M11 2a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h6a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3zm1.293 6.293a1 1 0 0 1 1.414 0l3 3a1 1 0 0 1 0 1.414l-3 3a1 1 0 0 1-1.414-1.414L13.586 13H5a1 1 0 1 1 0-2h8.586l-1.293-1.293a1 1 0 0 1 0-1.414" clip-rule="evenodd"/></svg>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <div class="files">
+            <p class="files-text">Archivos</p>
+
+            <div class="files-content">
+                <div class="file-item file-create">
+                    <div class="file-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#ffffff" d="m19.352 7.617l-3.96-3.563c-1.127-1.015-1.69-1.523-2.383-1.788L13 5c0 2.357 0 3.536.732 4.268C14.464 10 15.643 10 18 10h3.58c-.362-.704-1.012-1.288-2.228-2.383"/><path fill="#ffffff" fill-rule="evenodd" d="M10 22h4c3.771 0 5.657 0 6.828-1.172C22 19.657 22 17.771 22 14v-.437c0-.873 0-1.529-.043-2.063h-4.052c-1.097 0-2.067 0-2.848-.105c-.847-.114-1.694-.375-2.385-1.066c-.692-.692-.953-1.539-1.067-2.386c-.105-.781-.105-1.75-.105-2.848l.01-2.834c0-.083.007-.164.02-.244C11.121 2 10.636 2 10.03 2C6.239 2 4.343 2 3.172 3.172C2 4.343 2 6.229 2 10v4c0 3.771 0 5.657 1.172 6.828C4.343 22 6.229 22 10 22m-.987-9.047a.75.75 0 0 0-1.026 0l-2 1.875a.75.75 0 0 0 1.026 1.094l.737-.69V18.5a.75.75 0 0 0 1.5 0v-3.269l.737.691a.75.75 0 0 0 1.026-1.094z" clip-rule="evenodd"/></svg>
+                    </div>
+
+                    <div class="file-name">
+                        <p>Subir archivo</p>
+                    </div>
+                </div>
+
+                <!-- <div class="file-item">
+                    <div class="file-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#ffffff" d="m19.352 7.617l-3.96-3.563c-1.127-1.015-1.69-1.523-2.383-1.788L13 5c0 2.357 0 3.536.732 4.268C14.464 10 15.643 10 18 10h3.58c-.362-.704-1.012-1.288-2.228-2.383"/><path fill="#ffffff" fill-rule="evenodd" d="M14 22h-4c-3.771 0-5.657 0-6.828-1.172C2 19.657 2 17.771 2 14v-4c0-3.771 0-5.657 1.172-6.828C4.343 2 6.239 2 10.03 2c.606 0 1.091 0 1.5.017c-.013.08-.02.161-.02.244l-.01 2.834c0 1.097 0 2.067.105 2.848c.114.847.375 1.694 1.067 2.386c.69.69 1.538.952 2.385 1.066c.781.105 1.751.105 2.848.105h4.052c.043.534.043 1.19.043 2.063V14c0 3.771 0 5.657-1.172 6.828C19.657 22 17.771 22 14 22m3-6c.552 0 1-.672 1-1.5s-.448-1.5-1-1.5s-1 .672-1 1.5s.448 1.5 1 1.5m-8.624 1.084a.75.75 0 0 1 1.04-.208a4.658 4.658 0 0 0 5.168 0a.75.75 0 0 1 .832 1.248a6.158 6.158 0 0 1-6.832 0a.75.75 0 0 1-.208-1.04M7 16c.552 0 1-.672 1-1.5S7.552 13 7 13s-1 .672-1 1.5s.448 1.5 1 1.5" clip-rule="evenodd"/></svg>
+                    </div>
+
+                    <div class="file-name">
+                        <p>hola.txt</p>
+                    </div>
+
+                    <div class="dropdown-center dropdown-options">
+                        <div class="note-title-options" data-bs-toggle="dropdown" aria-expanded="false">
+                            <svg class="note-title-options-svg" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="#FFF" d="M16 12a2 2 0 0 1 2-2a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2m-6 0a2 2 0 0 1 2-2a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2m-6 0a2 2 0 0 1 2-2a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2"/></svg>
+                        </div>
+
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><button id="" class="dropdown-item">Descargar archivo</button></li>
+                            <li><button id="" class="dropdown-item">Cambiar nombre</button></li>
+                        </ul>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="../assets/js/folder.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
