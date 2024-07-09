@@ -1,4 +1,4 @@
-const urlIp = "http://localhost:5182/api/folders";
+const urlIp = "http://fast-files.somee.com/api/folders";
 const token = localStorage.getItem("authToken");
 
 // GREETINGS
@@ -51,6 +51,4 @@ fetch(urlIp).then(r => r.json()).then((d) => {
             location.href = "../../folder/index.html";
         })
     })
-
-    console.log(d);
 })
